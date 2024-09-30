@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение темы и изображения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .theme-block {
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-theme {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .image {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image.enlarged {
+            transform: scale(1.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Абзацы с кнопкой -->
+    <div>
+        <p id="paragraph1">Это первый абзац.</p>
+        <p id="paragraph2">Это второй абзац.</p>
+        <p id="paragraph3">Это третий абзац.</p>
+        <button onclick="changeText()">Изменить текст второго абзаца</button>
+    </div>
+
+    <!-- Блок с текстом и кнопкой для смены темы -->
+    <div class="theme-block" id="themeBlock">
+        <p>Этот блок может менять тему.</p>
+        <button onclick="toggleTheme()">Сменить тему</button>
+    </div>
+
+    <!-- Галерея изображений -->
+    <div>
+        <img src="./Пок.png" alt="Изображение 1" class="image" onclick="enlargeImage(this)">
+        <img src="./Dota 2.png" alt="Изображение 2" class="image" onclick="enlargeImage(this)">
+        <img src="./Gym.png" alt="Изображение 3" class="image" onclick="enlargeImage(this)">
+    </div>
+
+    <script>
+        // Изменение текста второго абзаца и его цвета
+        function changeText() {
+            var paragraph = document.getElementById("paragraph2");
+            paragraph.textContent = "Текст изменен!";
+            paragraph.classList.toggle("highlight");
+        }
+
+        // Смена темы блока
+        function toggleTheme() {
+            var themeBlock = document.getElementById("themeBlock");
+            themeBlock.classList.toggle("dark-theme");
+        }
+
+        // Увеличение изображения и добавление тени
+        function enlargeImage(img) {
+            img.classList.toggle("enlarged");
+        }
+    </script>
+
+</body>
+</html>
