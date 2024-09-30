@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style type="text/css">
+        body {
+            overflow-x: hidden; /* Скрыть горизонтальный ползунок */
+            overflow-y: auto; /* Позволить вертикальный ползунок при необходимости */
+            margin: 0; /* Убедитесь, что нет отступов у body */
+        }
+        .profil {
+            width: 1010px; /* Ширина прямоугольника */
+            height: 60px; /* Высота прямоугольника */
+            background-color: #66A5AD; /* Цвет прямоугольника */
+            border-top-left-radius: 25px; /* Закругление верхнего левого угла */
+            border-bottom-left-radius: 25px; /* Закругление нижнего левого угла */
+            border-top-right-radius: 0px; /* Прямой правый верхний угол */
+            border-bottom-right-radius: 0px; /* Прямой правый нижний угол */
+            margin-top: -10px;
+            margin-left: 368px;
+            display: flex; /* Используем flexbox */
+            align-items: center; /* Вертикальное выравнивание по центру */
+            justify-content: center; /* Горизонтальное выравнивание по центру */
+        }
+        .text {
+            color: white; /* Цвет текста */
+            font-family: Franklin Gothic Book, sans-serif; /* Шрифт */
+            font-size: 28px; /* Размер текста */
+            margin: 0; /* Убираем отступы */
+            letter-spacing: 1px;
+        }
+        .circle {
+            width: 282px; /* Ширина круга */
+            height: 282px; /* Высота круга */
+            background-color: #1F2937; /* Цвет круга */
+            border-radius: 50%; /* Закругление до формы круга */
+            margin-left: 50px;
+        }
+        .pokemon {
+            width: 236px;
+            height: 236px;
+            padding: 30px;
+            margin-left: 13px;
+            margin-top: -7px;
+        }
+        .text1 {
+            width: 280px;
+            height: 100px;
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 14px;
+            font-weight: 100;
+            margin-top: -260px;
+            margin-left: 420px;
+            letter-spacing: 2px;
+        }
+        .text2 {
+            width: 300px;
+            height: 100px;
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-left: 740px;
+            margin-top: -120px;
+        }
+        .links {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+        .text3 {
+            margin-top: -120px;
+            margin-left: 1160px;
+        }
+        .telegram {
+            width: 135px;
+            height: 259px;
+            margin-top: -90px;
+            margin-left: 1050px;
+            transition: transform 0.3s ease;
+        }
+        .telegram:hover {
+            transform: scale(1.1); /* Увеличиваем кнопку на 10% при наведении */
+        }
+        .rectangle {
+            width: 160px; 
+            height: 40px; 
+            background-color: #66A5AD; /* Прозрачный фон */
+            border-radius: 30px; 
+            margin: 20px auto; 
+            position: relative; 
+            margin-left: 1200px;
+            margin-top: -122px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; /* Выравнивание по центру */
+            text-align: center; /* Центрирование текста */
+            border: 2px solid #66A5AD; /* Прозрачная рамка */
+            transition: transform 0.3s ease;
+        }
+        .rectangle:hover {
+            transform: scale(1.1); /* Увеличиваем кнопку на 10% при наведении */
+        }
+        .icon, .icon1 {
+            width: 48px;
+            height: 27px;
+            margin-right: 10px; /* Отступ между иконкой и текстом */
+            padding: -15px;
+        }
+        .mystack {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+        .hobbies {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-right: 135px;
+        }
+        .container1 {
+            display: flex; /* Используем flexbox для расположения элементов в строку */
+            justify-content: flex-start; /* Выравнивание элементов по левому краю */
+            margin-top: 220px; /* Отступ сверху для контейнера */
+            margin-left: 138px; /* Отступ слева для контейнера */
+        }
+        .sites {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+         .container2 {
+            display: flex; /* Используем flexbox для контейнера */
+            margin-top: -40px; /* Отступ сверху для контейнера */
+            margin-left: 40px; /* Отступ слева для контейнера */
+        }
+        .backend {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+        .frontend {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-left: 90px; /* Сдвиг влево для элемента frontend */
+        }
+        .rectangle1{
+            width: 160px; 
+            height: 40px; 
+            background-color: #66A5AD; 
+            border-radius: 30px; 
+            margin: 20px auto; /* Центрирование */
+            position: relative; /* Устанавливаем позиционирование для дочерних элементов */
+            margin-left: 10px;
+            margin-top: -20px;
+        }
+        .rectangle2{
+            width: 160px; 
+            height: 40px; 
+            background-color: #66A5AD; 
+            border-radius: 30px; 
+            margin: 20px auto; /* Центрирование */
+            position: relative; /* Устанавливаем позиционирование для дочерних элементов */
+            margin-left: 214px;
+            margin-top: -60px;
+        }
+        .HTML {
+            width: 52px;
+            height: 30px;
+            margin-left: 153px;
+            margin-top: 5px;        
+        }
+        .text4 {
+            width: 100px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            font-family: Franklin Gothic Book,sans-serif;
+            margin-top: -27px;
+            margin-left: 56px;
+        }
+        .c {
+            width: 52px;
+            height: 30px;
+            margin-left: -200px; /* Корректируем отступ, чтобы поднять картинку */
+            margin-top: -80px; /* Уменьшаем отступ сверху для поднятия картинки */
+        }
+        .text5 {
+            width: 52px;
+            height: 30px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            margin-top: -50px; /* Уменьшаем отступ сверху для текста */
+            margin-left: -160px; /* Корректируем отступ слева для текста */
+        }
+        .hobbies {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-left: 150px; /* Увеличьте значение, чтобы сдвинуть вправо */
+        }
+        .hobbies-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-left: 1150px; /* Увеличьте значение, чтобы сдвинуть вправо */
+            margin-top: -120px; /* Убедитесь, что это значение подходит для вашего дизайна */
+        }
+        .hobby-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+        .hobby-rectangle {
+            width: 160px;
+            height: 40px;
+            background-color: #66A5AD;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 40px;
+            margin-left: 20px; /* Сдвиг вправо для прямоугольников */
+        }
+        .hobby-text {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-left: 10px; /* Дополнительный отступ слева для текста */
+        }
+        .hobby-image {
+            width: 30px;
+            height: 30px;
+            margin-left: -200px;
+        }
+        .design {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-left: 151px; /* Сдвиг влево для элемента design */
+        }
+        .design_conteiner {
+        }
+        .hobby-image {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px; /* Увеличьте отступ слева от изображения */
+        }
+        .sites1 {
+            width: 614px;
+            height: 331px;
+            margin-left: 420px;
+            margin-top: -500px; /* Поднимаем изображение вверх */
+            border-top-left-radius: 25px; /* Закругление верхнего левого угла */
+            border-top-right-radius: 25px; /* Закругление верхнего правого угла */
+            overflow: hidden; /* Скрываем содержимое, которое выходит за границы контейнера */
+            position: absolute;
+        }
+        .hobbies-wrapper {
+            margin-left: 150px; /* Увеличьте значение, чтобы сдвинуть вправо */
+           
+        }
+        .mystack, .sites, .hobbies {
+            margin-right: 50px; /* Отступ между элементами */
+        }
+        .block {
+            width: 614px;
+            height: 197px;
+            background-color: #1F2937;
+            margin-left: 420px;
+            margin-top: -170px;
+            position: absolute;
+        }
+        .text6 {
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            font-weight: 100;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .text7 {
+            color: #787A7D;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 100;
+            margin-left: 20px;
+            margin-top: -20px;
+        }
+        .text8 {
+            color: #787A7D;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 100;
+            margin-left: 20px;
+            margin-top: -10px;
+        }
+        .rectangle5 {
+            width: 160px; /* Ширина прямоугольника */
+            height: 40px; /* Высота прямоугольника */
+            background-color: #16A34A; /* Цвет прямоугольника */
+            border-radius: 15px; /* Закругление углов */
+            display: flex; /* Используем flexbox */
+            justify-content: center; /* Горизонтальное выравнивание по центру */
+            align-items: center; /* Вертикальное выравнивание по центру */
+            margin-left: 440px; /* Измените это значение для перемещения влево */
+            margin-top: -23px;
+            position: absolute;
+            transition: transform 0.3s ease; /* Плавный переход для трансформации */
+        }
+        .rectangle5:hover {
+            transform: scale(1.1); /* Увеличиваем кнопку на 10% при наведении */
+        }
+        .rectangle-text4 {
+            color: white; /* Цвет текста */
+            font-family: Franklin Gothic Book, sans-serif; /* Шрифт */
+            font-size: 16px; /* Размер текста */
+        }
+        .icon-link {
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+        }
+        .transparent-button {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: white; /* Цвет текста */
+            font-family: Franklin Gothic Book, sans-serif; /* Шрифт */
+            font-size: 20px; /* Размер текста */
+            letter-spacing: 2px; /* Межбуквенный интервал */
+            font-weight: 100; /* Легкий вес текста */
+            background-color: transparent; /* Прозрачный фон */
+            border: none; /* Убираем границу */
+            display: flex; /* Выравнивание элементов внутри */
+            align-items: center; /* Вертикальное выравнивание */
+            padding: 10px 20px; /* Внутренний отступ */
+        }
+        .text_dota2 {
+            text-decoration: none;
+            color: white;
+            font-family: Franklin Gothic Book, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body bgcolor="#04202C">
+
+    <div class="profil">
+        <h3 class="text">Hi, I'm Svyatoslav Sukhonogin, a full stack developer from Almaty</h3>
+    </div>
+
+    <div class="circle">    
+        <img src="./Пок.png" class="pokemon">
+    </div>
+    <div>
+        <h4 class="text1">About me - My name is Svyatoslav Sukhonogin, birthday is<br> 
+        November 9, my hobbies are<br> 
+        going to the gym, playing Dota 2<br>
+        and watching anime.</h4>
+    </div>
+
+    <div>
+        <h4 class="text2">I understand programming languages<br> 
+        such as C#, I also understand website<br>
+        layout HTML, CSS, JavaScript, and in<br> 
+        addition to programming skills, I have<br> 
+        design skills, I am proficient in<br> 
+        programs such as Photoshop, Illustrator,
+        Premiere Pro, Figma. 
+        </h4>
+    </div>
+
+    <div class="links">
+        <h4 class="text3">Links</h4>
+    </div>
+
+    <a href="https://t.me/Sl00W_Bro" target="_blank">
+    <img src="./Telegram.png" class="telegram" alt="Telegram">
+    </a>
+
+    <div class="rectangle">
+        <a href="https://discord.gg/7fwbtHbTkw" target="_blank" class="icon-link">
+            <img src="./Discord.png" class="icon1" alt="Discord" style="margin-left:-20px;">
+            <span style="color: white; font-family: Franklin Gothic Book, sans-serif;margin-left: -5px;">Discord</span> 
+        </a>
+    </div>
+
+    <div class="rectangle">
+        <a href="https://github.com/Sl00WBro" target="_blank" class="icon-link">
+            <img src="./GitHub.png" class="icon" alt="GitHub" style="margin-left:-20px;">
+            <span style="color: white; font-family: Franklin Gothic Book, sans-serif;margin-left: -5px;">GitHub</span> 
+        </a>
+    </div>
+
+     <div class="container1">
+        <h4 class="mystack">My stack</h4>
+        <h4 class="sites" style="margin-left: 389px;">Sites</h4>
+        <h4 class="hobbies" style="margin-left: 336px;">My hobbies</h4>
+    </div>
+
+    <div class="container2">
+        <h4 class="backend">Backend</h4>
+        <h4 class="frontend">Frontend</h4> 
+    </div>
+
+    <div class="rectangle1"></div>
+
+    <div class="rectangle2">
+        <img src="./C.png" class="c">
+        <img src="./HTML, CSS, JS.png" class="HTML">
+        <h4 class="text4">HTML, CSS, JS</h4>
+        <h4 class="text5">C#</h4>
+    </div>
+
+    <div class="hobbies-container">
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: -17px;">
+                <h4 class="hobby-text">Gym</h4>
+            </div>
+            <img src="./Gym.png" class="hobby-image" style="position: absolute; width: 70px;height: 70px; margin-left: -17px;margin-top: 7px;">
+        </div>
+
+    <div class="hobby-row">
+        <div class="hobby-rectangle" style="margin-left: -17px;">
+
+            <a href="https://ru.dotabuff.com/players/1041931113" target="_blank" class="text_dota2">Dota 2</a>
+        </div>
+        <img src="./Dota 2.png" class="hobby-image" style="width: 35px;height: 35px; margin-left: -186px;">
+    </div>
+
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: -17px;">
+                <h4 class="hobby-text">Anime</h4>
+            </div>
+            <img src="./Пок.png" class="hobby-image" style="width: 35px;height: 35px; margin-left: -186px;">
+        </div>
+    </div>
+
+    <h4 class="design">Design</h4> 
+
+    <div class="design-container">
+
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: 110px;">
+                <h4 class="hobby-text" style="margin-left: 30px;">Photoshop</h4>
+            </div>
+            <img src="./Photoshop.png" class="hobby-image" style="width: 35px;height: 35px; margin-left: -189px;">
+        </div>
+
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: 110px;">
+                <h4 class="hobby-text" style="margin-left: 30px;">Illustrator</h4>
+            </div>
+            <img src="./Illustrator.png" class="hobby-image" style="width: 35px;height: 35px; margin-left: -189px;">
+        </div>
+
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: 110px;">
+                <h4 class="hobby-text" style="margin-left: 30px;">Premiere Pro</h4>
+            </div>
+            <img src="./PremierePro.png" class="hobby-image" style="width: 35px;height: 35px; margin-left: -193px;">
+        </div>
+
+        <div class="hobby-row">
+            <div class="hobby-rectangle" style="margin-left: 110px;">
+                <h4 class="hobby-text" style="margin-left: 30px;">Figma</h4>
+            </div>
+            <img src="./Figma.png" class="hobby-image" style="width: 25px;height: 35px; margin-left: -180px;">
+        </div>
+    </div>
+
+    <img src="./Сайт1.PNG" class="sites1">
+
+    <div class="block">
+        <h4 class="text6">Furniture Store</h4>
+        <h4 class="text7">HTML, CSS, JS.</h4>
+        <h4 class="text8">User-friendly interface created in a minimalist style. The design was<br>
+                          developed by me for convenient use of the site.</h4>       
+    </div>
+
+    <div class="rectangle5">
+        <a href="file:///C:/Users/User/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Shop.html" target="_blank" class="transparent-button">Open site</a>
+    </div>
+
+</body>
+</html>
