@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+                    overflow-x: hidden; /* Скрыть горизонтальный ползунок */
+                    overflow-y: auto; /* Позволить вертикальный ползунок при необходимости */
+                    margin: 0; /* Убедитесь, что нет отступов у body */
+                }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .rectangle {
+            width: 100%;  /* Ширина */
+            height: 60px;  /* Увеличена высота для лучшего отображения текста */
+            background-color: #FCFDFE;  /* Цвет фона */   
+            display: flex; /* Используем flex для выравнивания текста */
+            align-items: center; /* Центрируем текст по вертикали */
+            justify-content: flex-end; /* Центрируем текст по горизонтали вправо */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 30px; /* Добавляем расстояние между элементами */          
+        }
+        .inline-text {
+            font-weight: 900; /* Устанавливаем очень жирный текст */
+            font-size: 18px; /* Размер шрифта */
+            color: #000000; /* Цвет текста */
+            white-space: nowrap; /* Запрет переносов строки */
+            margin: 0 87px; /* Отступы слева и справа */
+            font-family: 'Inter', sans-serif; /* Устанавливаем шрифт для всего документа */
+            line-height: 1.5; /* Высота строки для улучшения читаемости */
+            word-spacing: 0px;
+            font-weight: 900;
+            font-size: 18px;
+            color: #000000;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            background: none; /* Убираем фон */
+            border: none; /* Убираем границу */
+            transition: transform 0.3s ease; /* Плавный переход для увеличения */
+        }
+        .inline-text:hover {
+            transform: scale(1.1); /* Увеличение кнопки на 10% */
+        }
+        .basket {
+            width: 40px; 
+            height: 40px; 
+            margin-left: 20px; 
+            margin-right: 40px;
+        }  
+
+        .interior {
+            width: 582px; 
+            height: 440px; 
+            border-radius: 20px; /* Закругление краёв изображения */
+            margin: 10px; /* Отступ вокруг изображения (по желанию) */
+            object-fit: cover; /* Сохранение пропорций изображения */
+            margin-top: 40px;
+            margin-left: 60px;
+        }       
+
+        .rectangle_for_text1 {
+            width: 100%;  /* Ширина на всю ширину родителя */
+            max-width: 363px; /* Максимальная ширина прямоугольника */
+            height: 110px;  /* Высота для отображения текста */
+            background-color: transparent;
+            display: flex; /* Используем flex для выравнивания текста */
+            align-items: center; /* Центрируем текст по вертикали */
+            justify-content: center; /* Центрируем текст по горизонтали */
+            margin-top: -124px; /* Поднимаем прямоугольник выше */
+            margin-left: auto; /* Центрируем прямоугольник */
+            margin-right: 180px; /* Центрируем прямоугольник */
+            border-radius: 20px; /* Закругление краёв прямоугольника */
+            padding: 20px; /* Отступ внутри прямоугольника для текста */
+            border: none;
+        }
+        .logo {
+            margin-left: -10px; /* Центрируем логотип по горизонтали */
+            margin-right: auto; /* Центрируем логотип по горизонтали */
+            margin-top: -550px; /* Поднимаем логотип выше */
+            width: 75px;
+            height: 75px;
+            display: block; /* Обеспечиваем, что логотип отображается как блок */
+        }
+        /* Новый стиль для прямоугольника "Регистрация или Вход" */
+        .rectangle_registr_or_login {
+            width: 100%;  /* Ширина на всю ширину родителя */
+            max-width: 400px; /* Максимальная ширина прямоугольника */
+            height: 290px;  /* Высота под контент */
+            background-color: #C4C2BF;  /* Светло-серый цвет фона */
+            border-radius: 30px; /* Закругленные края */
+            display: flex; /* Flex для выравнивания содержимого */
+            flex-direction: column; /* Вложенные элементы располагаем вертикально */
+            align-items: center; /* Вертикальное выравнивание */
+            justify-content: center; /* Горизонтальное выравнивание */
+            margin: 20px auto; /* Центрирование и отступы сверху и снизу */
+            font-family: 'Inter', sans-serif; /* Используем шрифт Inter */
+            font-size: 18px; /* Размер текста */
+            font-weight: 700; /* Жирный текст */
+            color: #000; /* Цвет текста */
+            margin-left: 825px;
+            margin-top: 70px;
+            padding-top: 20px; /* Отступ сверху */
+            padding-right: 15px; /* Отступ справа */
+            padding-bottom: 25px; /* Отступ снизу */
+            padding-left: 10px; /* Отступ слева */
+            border: 2px solid #000;
+        }
+        .registr_or_login_text1{
+            width: 100%;
+            max-width: 250px;
+            height: 50px;
+            background-color: #FCFDFE; /* Цвет прямоугольника */
+            border-radius: 30px; /* Закругленные края */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px; /* Отступ снизу */
+        }
+        .text_for_registr1 {
+            font-weight: bold; /* Делает текст жирным */
+            font-family: 'Inter', sans-serif; /* Используем шрифт Inter */
+            font-size: 18px; /* Размер шрифта */
+            color: #000; /* Цвет текста */
+            opacity: 0.6;
+        }
+        .text_for_registr {
+            width: 100%;
+            max-width: 300px; /* Уменьшаем максимальную ширину */
+            height: 40px; /* Уменьшаем высоту */
+            background-color: #FCFDFE;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            padding: 10px; /* Уменьшаем отступ внутри */
+            margin-bottom: 10px; /* Уменьшаем отступ снизу */
+        }
+        /* Стиль для кнопки */
+        .login-button {
+            width: 100%;
+            max-width: 150px;
+            height: 50px;
+            background-color: #FCFDFE; /* Цвет кнопки */
+            border: none; /* Убираем границы */
+            border-radius: 30px; /* Закругленные края */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            cursor: pointer; /* Курсор в виде руки при наведении */
+            transition: transform 0.3s ease; /* Плавный переход для увеличения */
+        }
+        .login-button:hover {
+            transform: scale(1.1);
+        }
+
+        .shop{
+            width: 120px;
+            height: 120px;
+            margin-top: 190px;
+            margin-left: 158px;
+        }
+        .shop1{
+            font-weight: 900;
+            margin-left: 175px;
+            margin-top: -170px;
+            width: 120px;
+            height: 120px;
+            font-family: 'Inter', sans-serif;
+        }
+        .mail{
+            width: 120px;
+            height: 120px;
+            margin-top: -76px;
+            margin-left: 616px;
+            display: flex; /* Используем Flexbox */
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center; /* Центрируем по вертикали (если необходимо) */
+        }
+        .mail1{
+            font-weight: 900;
+            margin-left: 613px;
+            margin-top: -169px;
+            width: 120px;
+            height: 120px;
+            font-family: 'Inter', sans-serif;
+        }
+        .garant {
+            width: 120px; /* Ширина нового изображения */
+            height: 120px; /* Высота нового изображения */
+            margin-top: -76px; /* Отступ сверху (если требуется) */
+            margin-left: 1110px; /* Отступ слева (по желанию) */
+        }
+
+        .garant1 {
+            font-weight: 900; /* Жирный текст */
+            margin-left: 1130px; /* Отступ слева */
+            margin-top: -169px; /* Отступ сверху (по желанию) */
+            width: 120px; /* Ширина текстового контейнера */
+            height: 120px; /* Высота текстового контейнера */
+            font-family: 'Inter', sans-serif; /* Шрифт для текста */
+        }
+        .sofa {
+             border-radius: 20px;
+             height: 500px;
+             width: 500px;
+             margin-left: 58px;
+             margin-top: 160px;
+        }
+        .text1 {
+            font-weight: 900; /* Очень жирный текст */
+            font-family: 'Inter', sans-serif; /* Шрифт для текста */
+            margin-left: 420px;
+            margin-top: -560px;
+            font-size: 24px;
+        }
+         .rectangle_text2 {
+            width: 400px;
+            height: 190px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;  /* Центровка по горизонтали внутри блока */
+            align-items: center;  /* Центровка по вертикали */
+            text-align: justify;  /* Равномерное распределение текста по строкам */
+            color: black;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            padding: 20px;  /* Отступы внутри блока */
+            margin-left: 900px;
+            margin-top: 27px;
+            padding-left: 62px;
+            padding-right: 20px;      
+        }
+        .rectangle_text2::after {
+            content: '';  /* Это необходимо для корректной работы justify */
+            display: inline-block;
+            width: 100%;
+        }
+        .parent-container_text2 {
+            display: flex;
+            justify-content: center;  /* Центровка по горизонтали */
+            align-items: center;  /* Центровка по вертикали */
+            height: 100vh;  /* Высота родительского контейнера на весь экран */
+        }
+        .text2{
+            font-weight: 300;
+        }
+        .wardrobe{
+            border-radius: 15px; /* Устанавливаем радиус закругления */
+            width: 430px; /* Устанавливаем ширину изображения (по желанию) */
+            height: 500px; /* Автоматическая высота для сохранения пропорций */
+            margin-left: 900px;
+            margin-top: 60px;
+        }
+        .rectangle_text3{
+            width: 450px;
+            height: 160px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;  /* Центровка по горизонтали внутри блока */
+            align-items: center;  /* Центровка по вертикали */
+            text-align: justify;  /* Равномерное распределение текста по строкам */
+            color: black;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            padding: 20px;
+            margin-left: 106px;
+            margin-top: -166px;
+        }
+       .workers{
+            width: 758px;            /* Ширина элемента */
+            height: 554px;          /* Высота элемента */
+            border-radius: 15px;    /* Радиус закругления краев */
+            margin-left: 60px ;
+            margin-top: 120px;
+       }
+       .workers_rectangle{
+            width: 340px;               /* Ширина прямоугольника */
+            height: 440px;              /* Высота прямоугольника */
+            background-color: transparent; /* Прозрачный фон */
+            border: 2px solid black;    /* Обводка черного цвета толщиной 2px */
+            border-radius: 15px;        /* Закругленные края (опционально) */
+            margin-left: 1000px;
+            margin-top: -506px;
+       }
+       .garant2{
+            text-align: center;            /* Центрирование текста по горизонтали */
+            line-height: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;        
+      }
+
+      .garant3{
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+            font-weight: 300;
+      }
+      .garant4{
+            font-weight: 900; /* Очень жирный текст */
+            font-family: 'Inter', sans-serif; /* Шрифт для текста */
+            font-size: 24px;
+            margin-left: 520px;
+            margin-top: -560px;
+      }
+      .input-field {
+            width: 100%; /* Ширина на всю ширину контейнера */
+            max-width: 250px; /* Максимальная ширина поля */
+            height: 40px; /* Высота поля */
+            background-color: transparent; /* Прозрачный фон */
+            border-radius: 30px; /* Закругленные края */
+            border: none; /* Черная граница */
+            padding: 10px; /* Отступы внутри поля */
+            font-family: 'Inter', sans-serif; /* Шрифт */
+            font-size: 18px; /* Размер текста */
+            font-weight: 700; /* Жирный текст */
+            color: #000; /* Цвет текста */
+            margin-top: 10px; /* Отступ сверху */
+            box-sizing: border-box; /* Чтобы padding не увеличивал размеры поля */
+            outline: none;
+        }
+        .input-field::placeholder {
+            color: #999; /* Цвет текста внутри поля до ввода данных */
+            outline: none;
+        }
+        .basket-button {
+            background: none; /* Убираем фон */
+            border: none; /* Убираем границу */
+            cursor: pointer; /* Курсор в виде руки при наведении */
+            outline: none; /* Убираем обводку */
+            transition: transform 0.3s ease; /* Плавный переход для увеличения */
+            margin-right: -20px;
+        }
+        .basket-button:hover {
+            transform: scale(1.1); /* Увеличение кнопки на 10% */
+        }
+    </style>
+</head>
+<body bgcolor="#E9E9E9">
+    <div class="rectangle">
+        <button class="inline-text">О нас</button>
+        <button class="inline-text">Товары</button>
+        <button class="inline-text">Гарантия</button>
+        <span class="inline-text">+7 (495)120-35-20</span>
+        <button class="basket-button">
+        <img src="./Корзина.png" class="basket" alt="Корзина">
+        <button class="basket-button">
+    </div>
+
+    <img src="./Интерьер.png" class="interior" alt="Интерьер">
+
+    <div class="rectangle_for_text1">
+        <h4 style="text-align: center;">Название - мы фирма основанная в Швеции<br>
+        Нидерландская производственно-розничная<br>
+        торговая группа, одна из крупнейших в<br>
+        мире торговых сетей по продаже мебели и<br>
+        товаров для дома.</h4>
+    </div>
+
+    <img src="./Logo.png" class="logo">
+
+    <div class="rectangle_registr_or_login">
+        <div class="registr_or_login_text1">
+            <h4>Регистрация и Вход</h4> 
+        </div>
+
+        <div class="text_for_registr" >
+    
+    <input type="text" class="input-field" placeholder="Введите email или логин" style="margin-top: -1px;">
+</div>
+
+<div class="text_for_registr">
+    
+    <input type="password" class="input-field" placeholder="Введите пароль"style="margin-top: -1px;">
+</div>
+
+
+        <button class="login-button">
+            <h4>Войти</h4>
+        </button>
+    </div>
+
+    <div>
+       <img src="./Магазин.png" class="shop"> 
+    
+       <h4 class="shop1">Более 400 филиалов</h4>
+    </div>
+
+    <div>
+       <img src="./.png" class="mail"> 
+    
+       <h4 class="mail1">Доставка по всему миру</h4>
+    </div>
+
+    <div>
+   <img src="./.png" class="garant"> 
+   <h4 class="garant1">Гарантия качества!</h4>
+    </div>
+
+    <img src="./Диван.jpg" class="sofa">
+    <div>
+        <h4 class="text1">У нас найдется мебель каждому по вкусу</h4>
+    </div>
+
+    <div class="rectangle_text2">
+        <div class="parent-container_text2">
+        <h4 class="text2">Если хотите приобрести действительно качественную мебель, которая прослужит долго и морально не устареет, то, скорее всего, Название – это тот выбор который вы должны сделать.
+        </h4>
+        </div>
+    </div>
+
+    <img src="./Шкаф.png" class="wardrobe">
+    <div class="rectangle_text3">       
+        <h4 style="font-weight: 300;">
+        Мебель хороша своим неповторимым дизайном и надежностью, если хотите особенную мебель, долговечную и красивую то мы вам нужны,  Название. Наши модели славятся во всем мире за счет качества, мы фирма номер 1.
+        </h4>     
+    </div>
+
+    <img src="./Рабочие.jpg" class="workers">
+    <div class="workers_rectangle">
+        <h4 class="garant2">Гарантия</h4>
+        <h4 class="garant3">
+        Товары принимаются обратно или обмениваются в течение 90 дней с момента покупки при предъявлении чека, подтверждающего покупку. Для возврата всей суммы товары должны быть неиспользованными, в оригинальной упаковке, несобранными.
+        </h4>
+    </div>
+
+    <h4 class="garant4">
+        Ремонт мебели по гарантии
+    </h4>
+</body>
+</html>
