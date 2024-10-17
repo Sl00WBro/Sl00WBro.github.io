@@ -3,218 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"> <!-- Подключение шрифта Inter с разными весами -->
-    <link rel="icon" href="static/img/icon/favicon.ico">
-    <title>My Slack</title>
-    <style type="text/css">
-        body {
-            font-family: 'Inter', sans-serif; /* Устанавливаем шрифт Inter */
-        }
+    <title>Slack</title>
+    <style>
         .header {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 25px;
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            margin-left: 30px;
+            position: relative;
         }
-        .search img {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .header-text {
-            cursor: pointer;
-        }
-        .header-text span img {
-            width: 10px;
-            height: 10px;
-        }
-        .search {
-            margin-left: 150px;
-        }
-        .header-text span {
-            font-size: 15px;
-            margin-left: 20px;
-            font-family: 'Inter', sans-serif; /* Устанавливаем шрифт Inter */
-            font-weight: bold;
-        }
-        .button-header {
-            border: solid;
-            width: 140px;
-            height: 40px;
+
+        .logo {
             display: flex;
-            justify-content: center; /* Горизонтальное выравнивание */
             align-items: center;
-            border-radius: 5px; 
-            border-width: 2px;
+            margin-right: 40px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: purple;
+        }
+
+        .search-signin {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search {
             cursor: pointer;
-            margin-left: 20px;
-            /* Увеличиваем отступ сверху для опускания кнопок */
-            margin-top: 10px; /* Увеличиваем значение для более заметного эффекта */
         }
+
+        .search img {
+            height: 20px;
+        }
+
+        .signin {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            border: 2px solid purple;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
         .talk-to-sales {
-            border-color: purple;
-            transition: border-width 0.2s ease;
+            background-color: white;
+            color: purple;
+            border: 2px solid purple;
         }
+
         .talk-to-sales:hover {
             border-width: 3px;
         }
-        .talk-to-sales span {
-            margin-bottom: 0; /* Убираем отступ снизу */
-            color: purple;
-            font-weight: normal; /* Тонкий шрифт */
-        }
+
         .get-started {
-            background-color: #611F69; /* Измененный цвет кнопки */
-            border-color: #611F69; /* Измененный цвет кнопки */
-            transition: ease 0.3s;
-        }
-        .get-started:hover {
-            background-color: #611F69; /* Измененный цвет при наведении */
-            border-color: #611F69; /* Измененный цвет при наведении */
-        }
-        .get-started span {
+            background-color: #611F69;
             color: white;
-            font-weight: 400; /* Установлен более легкий вес шрифта */
-            margin-bottom: 0; /* Убираем отступ снизу */
+            border: 2px solid #611F69; /* Отдельная обводка для get-started */
         }
-        .some-words .get-started {
-            margin-top: -32px;
+
+        .get-started-large {
+            padding: 16px 32px;
+            font-size: 18px;
         }
-        .buttons-header {
+
+        .get-started:hover {
+            background-color: #4e164f;
+        }
+
+        .gif-container {
+            margin: 60px 0;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
         }
-        .title {
+
+        .gif-container img {
+            width: 1000px;
+            height: auto;
+        }
+
+        .info-text {
+            margin-top: 15px;
             text-align: center;
+            font-size: 20px;
+            color: black;
         }
-        .title h1 {
-            font-size: 50px; /* Уменьшен размер шрифта */
-            font-family: 'Inter', sans-serif; /* Устанавливаем шрифт Inter */
+
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 57%;
+            flex-wrap: wrap;
         }
-        .title h1 span {
-            color: #9122CA; /* Измененный цвет слова "work" */
+
+        .images img {
+            padding: 10px;
+            height: 30px;
+            transition: height 0.3s;
         }
-        .title {
-            height: 120px;
+
+        #nasa, #target {
+            height: 40px;
         }
-        .some-words .get-started {
-            margin-left: auto;
-            margin-right: auto;
-            width: 170px;
-            height: 50px;
-        }
-        .other-text {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .other-text span {
-            font-size: 17px;
-        }
-        .bold-text {
-            font-weight: bold;
-        }
+
         .image-container {
             display: flex;
             justify-content: center;
             margin-top: 60px;
         }
-        .images {
-            display: flex;
-            align-items: center;  
-            justify-content: space-between; /* Равные отступы между изображениями */
-            width: 57%;
-        }
+
         .video-container {
             display: flex;
             justify-content: center;
             margin-top: 50px;
         }
-        .big-text {
-            display: flex;
-            justify-content: center;
-            text-align: center;
+
+        @media screen and (max-width: 1200px) {
+            .search-signin {
+                margin-left: 100px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .header {
+                margin-left: 20px;
+            }
         }
-        .big-text h1 {
-            font-size: 50px;
-            width: 1072px;
+
+        @media screen and (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 10px;
+            }
+
+            .search-signin {
+                margin-left: 0;
+                margin-top: 10px;
+                justify-content: flex-start;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .images {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .images img {
+                height: 25px;
+            }
         }
-        .row {
-            display: flex;
-            justify-content: center;
-            font-weight: bold;
-        }
-        .part-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 30px;
-        }
-        .part-row span {
-            margin-left: 10px;
+
+        @media screen and (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .signin {
+                display: none;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .info-text {
+                font-size: 18px;
+            }
+
+            .gif-container img {
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .images {
+                justify-content: center;
+            }
+
+            .video-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .video-container img {
+                width: 100%;
+                max-width: 340px;
+                height: 100%;
+                max-height: 290px;
+            }
+
+            .search {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <img src="https://a.slack-edge.com/3d92b39/marketing/img/nav/slack-salesforce-logo-nav-black.png" alt="">
+            <img src="https://a.slack-edge.com/3d92b39/marketing/img/nav/slack-salesforce-logo-nav-black.png" alt="Logo">
         </div>
-        <div class="header-text features">
-            <span>Features <img src="static/img/arrow-down.png" alt=""></span>
+
+        <div class="nav-links">
+            <a href="#">Features</a>
+            <a href="#">Solutions</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Resources</a>
+            <a href="#">Pricing</a>
         </div>
-        <div class="header-text solutions">
-            <span>Solutions <img src="static/img/arrow-down.png" alt=""></span>
-        </div>
-        <div class="header-text enterprise">
-            <span>Enterprise</span>
-        </div>
-        <div class="header-text resources">
-            <span>Resources <img src="static/img/arrow-down.png" alt=""></span>
-        </div>
-        <div class="header-text pricing">
-            <span>Pricing</span>
-        </div>
-        <div class="search">
-            <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="">
-        </div>
-        <div class="header-text sign-in">
-            <span>Sign in</span>
-        </div>
-        <div class="buttons-header">
-            <div class="button-header talk-to-sales">
-                <span class="white-btn">TALK TO SALES</span>
+
+        <div class="search-signin">
+            <div class="search">
+                <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="Search" width="20">
             </div>
-            <div class="button-header get-started">
-                <span class="purple-btn">GET STARTED</span>
+            <a href="#" class="signin">Sign in</a>
+            <div class="buttons">
+                <div class="button talk-to-sales">
+                    <span>TALK TO SALES</span>
+                </div>
+                <div class="button get-started">
+                    <span>GET STARTED</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="some-words">
-        <div class="title">
-            <h1>Where <span class="purple-text">work</span> happens</h1>
+
+    <div class="gif-container">
+        <img src="./Welcome.gif" alt="Where work happens">
+        <div class="button-container">
+            <div class="button get-started get-started-large">
+                <span>GET STARTED</span>
+            </div>
         </div>
-        <div class="button-header get-started second">
-            <span class="purple-btn">GET STARTED</span>
-        </div>
-        <div class="other-text">
-            <span><span class="bold-text">Slack is free to try</span> for as long as you’d like</span>
+        <div class="info-text">
+            <strong>Slack is free to try</strong> for as long as you’d like 
         </div>
     </div>
+
     <div class="image-container">
         <div class="images">
             <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-airbnb-small.png" alt="" id="airbnb">
             <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-nasa-small.png" alt="" id="nasa">
             <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-uber-small.png" alt="" id="uber">
-            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-target-small.png" alt="">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-target-small.png" alt="" id="target">
             <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-nyt-small.png" alt="">
             <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-etsy-small.png" alt="">
         </div>
     </div>
     <div class="video-container">
-        <img src="./giga.png" alt="Big Image" style="width: 900px; height: 544px;">
+        <img src="./Zaglav.gif" alt="Big Image" style="width: 900px; height: 544px;">
     </div>
-    <div class="o-comp-container">      
 </body>
 </html>
